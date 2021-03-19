@@ -7,21 +7,23 @@ import {
   SpaceMono_400Regular,
   SpaceMono_700Bold,
 } from "@expo-google-fonts/space-mono";
+import ChatList from "./app/screens/ChatList";
 
 export default function App() {
-  let fontLoaded = useFonts({ SpaceMono_400Regular, SpaceMono_700Bold });
+  let [fontLoaded] = useFonts({ SpaceMono_400Regular, SpaceMono_700Bold });
 
   if (!fontLoaded) {
     return <AppLoading />;
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontFamily: "SpaceMono_400Regular" }}>
-        Open up App.js to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    // <View style={styles.container}>
+    //   <Text style={{ fontFamily: "SpaceMono_400Regular" }}>
+    //     Open up App.js to start working on your app!
+    //   </Text>
+    //   <StatusBar style="auto" />
+    // </View>
+    <ChatList />
   );
 }
 
