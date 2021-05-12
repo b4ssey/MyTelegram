@@ -8,7 +8,7 @@ function SAV({ children }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#E5E5E5",
+    backgroundColor: "#FAFAFA",
     paddingHorizontal: "6.5217%",
     flex: 1,
     paddingTop: Constants.statusBarHeight,
