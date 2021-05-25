@@ -1,7 +1,9 @@
 import React from "react";
 import { View, StyleSheet, FlatList } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { SvgXml } from "react-native-svg";
+import Search from "../../assets/search.svg";
 import AppSAV from "../components/AppSAV";
-import AppSvg from "../components/AppSvg";
 import AppText from "../components/AppText";
 import MessageFL from "../components/Flatlists/MessageFL";
 
@@ -67,7 +69,13 @@ dummyData = [
 function ChatList(props) {
   return (
     <AppSAV style={styles.container}>
-      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
         <AppText
           text="Chats"
           opacity={0.9}
@@ -76,7 +84,9 @@ function ChatList(props) {
           weight="400"
           //   stylesV={{ paddingVertical: "0.5%" }}
         />
-        <AppSvg height={19} width={19} />
+        <TouchableOpacity>
+          <Search height={19} width={19} />
+        </TouchableOpacity>
       </View>
       <FlatList
         data={dummyData}

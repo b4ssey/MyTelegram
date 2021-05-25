@@ -5,7 +5,9 @@ import AppText from "../AppText";
 import { SvgXml } from "react-native-svg";
 
 function MessageFL({ name, message, time, count }) {
-  const [avatar, setAvatar] = useState([]);
+  const [avatar, setAvatar] = useState([`<svg></svg>`]);
+
+  console.log(avatar);
 
   useEffect(() => {
     fetch("https://api.multiavatar.com/v1/" + JSON.stringify(name))
@@ -18,9 +20,7 @@ function MessageFL({ name, message, time, count }) {
   //i make the avatar an array because it first returns undefined
   return (
     <TouchableOpacity style={styles.container}>
-      <View style={styles.image}>
-        <SvgXml xml={avatar[0]} />
-      </View>
+      <View style={styles.image}>{/* <SvgXml xml={avatar[1]} /> */}</View>
       <View style={{ marginStart: "2.5%", width: "82.5%" }}>
         <View
           style={{

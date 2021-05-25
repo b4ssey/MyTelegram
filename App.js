@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 import AppLoading from "expo-app-loading";
 import {
   useFonts,
@@ -8,6 +9,7 @@ import {
   SpaceMono_700Bold,
 } from "@expo-google-fonts/space-mono";
 import ChatList from "./app/screens/ChatList";
+import Navigation from "./app/utils/Navigation";
 
 export default function App() {
   let [fontLoaded] = useFonts({ SpaceMono_400Regular, SpaceMono_700Bold });
@@ -16,15 +18,7 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return (
-    // <View style={styles.container}>
-    //   <Text style={{ fontFamily: "SpaceMono_400Regular" }}>
-    //     Open up App.js to start working on your app!
-    //   </Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    <ChatList />
-  );
+  return <Navigation />;
 }
 
 const styles = StyleSheet.create({

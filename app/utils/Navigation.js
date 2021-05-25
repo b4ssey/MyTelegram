@@ -2,6 +2,13 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import Search from "../../assets/search.svg";
+import CallSvg from "../../assets/calls.svg";
+import ChatSvg from "../../assets/chats.svg";
+import ContactSvg from "../../assets/contacts.svg";
+import SettingSvg from "../../assets/settings.svg";
+import AddSvg from "../../assets/add.svg";
 import ChatList from "../screens/ChatList";
 import Chat from "../screens/Chat";
 import User from "../screens/User";
@@ -17,7 +24,7 @@ const AddStack = createStackNavigator();
 
 function ChatStackScreen() {
   return (
-    <ChatStack.Navigator>
+    <ChatStack.Navigator headerMode="none">
       <ChatStack.Screen name="Chatlist" component={ChatList} />
       <ChatStack.Screen name="Chat" component={Chat} />
     </ChatStack.Navigator>
@@ -34,17 +41,17 @@ function UserStackScreen() {
 
 function SettingStackScreen() {
   return (
-    <SettingsStack.Navigator>
+    <SettingStack.Navigator>
       <SettingStack.Screen name="Setting" component={Setting} />
-    </SettingsStack.Navigator>
+    </SettingStack.Navigator>
   );
 }
 
 function CallStackScreen() {
   return (
-    <SettingsStack.Navigator>
+    <CallStack.Navigator>
       <CallStack.Screen name="Call" component={Call} />
-    </SettingsStack.Navigator>
+    </CallStack.Navigator>
   );
 }
 
@@ -62,11 +69,43 @@ export default function Navigation() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Chat" component={ChatStackScreen} />
-        <Tab.Screen name="Settings" component={SettingStackScreen} />
-        <Tab.Screen name="User" component={UserStackScreen} />
-        <Tab.Screen name="Call" component={CallStackScreen} />
-        <Tab.Screen name="Add" component={AddStackScreen} />
+        <Tab.Screen
+          name="Chat"
+          component={ChatStackScreen}
+          options={{
+            tabBarLabel: "Chat",
+            tabBarIcon: () => <ChatSvg />,
+          }}
+        />
+        <Tab.Screen
+          name="Call"
+          component={CallStackScreen}
+          options={{
+            tabBarIcon: () => <CallSvg />,
+          }}
+        />
+        <Tab.Screen
+          name="User"
+          component={UserStackScreen}
+          options={{
+            tabBarIcon: () => <ContactSvg />,
+          }}
+        />
+        <Tab.Screen
+          name="Settings"
+          component={SettingStackScreen}
+          options={{
+            tabBarIcon: () => <SettingSvg />,
+          }}
+        />
+
+        <Tab.Screen
+          name="Add"
+          component={AddStackScreen}
+          options={{
+            tabBarIcon: () => <AddSvg />,
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

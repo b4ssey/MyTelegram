@@ -1,8 +1,12 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 
 function Call(props) {
-  return <View style={styles.container}></View>;
+  return (
+    <View style={styles.container}>
+      <Text>Call Screen</Text>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
