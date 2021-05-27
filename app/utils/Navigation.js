@@ -49,7 +49,7 @@ function SettingStackScreen() {
 
 function CallStackScreen() {
   return (
-    <CallStack.Navigator>
+    <CallStack.Navigator headerMode="none">
       <CallStack.Screen name="Call" component={Call} />
     </CallStack.Navigator>
   );

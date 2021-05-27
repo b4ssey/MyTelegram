@@ -7,7 +7,7 @@ import AppSAV from "../components/AppSAV";
 import AppText from "../components/AppText";
 import MessageFL from "../components/Flatlists/MessageFL";
 
-dummyData = [
+const dmmyData = [
   {
     id: 1,
     name: "Julia Semid",
@@ -89,7 +89,7 @@ function ChatList(props) {
         </TouchableOpacity>
       </View>
       <FlatList
-        data={dummyData}
+        data={dmmyData}
         keyExtractor={(item) => item.id.toString()}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => {

@@ -9,8 +9,4 @@ function AppSvg({ width, height, iconName, style }) {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {},
-});
-
 export default AppSvg;
