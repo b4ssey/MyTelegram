@@ -9,7 +9,9 @@ import {
   SpaceMono_700Bold,
 } from "@expo-google-fonts/space-mono";
 import ChatList from "./app/screens/ChatList";
-import Navigation from "./app/utils/Navigation";
+import Navigation from "./app/navigation/Navigation";
+import AppNavigator from "./app/navigation/AppNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
 
 export default function App() {
   let [fontLoaded] = useFonts({ SpaceMono_400Regular, SpaceMono_700Bold });
@@ -18,7 +20,11 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <Navigation />;
+  return (
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
